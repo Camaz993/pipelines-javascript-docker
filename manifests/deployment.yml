@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: camazpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: camazpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: camazpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: camazpipelinesjavascriptdocker 
+          image: cptestcontainers.azurecr.io/camazpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
